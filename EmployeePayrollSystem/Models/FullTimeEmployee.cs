@@ -1,7 +1,7 @@
 using  EmployeePayrollSystem.Models;
 
 
-class FullTimeEmployee : Employee
+public class FullTimeEmployee : Employee
 {
 
  private double monthlySalary;

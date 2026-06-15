@@ -1,7 +1,7 @@
 using  EmployeePayrollSystem.Models;
 
 
-class PartTimeEmployee : Employee
+public class PartTimeEmployee : Employee
 {
 
 private double HoursWorked;
