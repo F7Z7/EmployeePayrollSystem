@@ -7,7 +7,7 @@ public abstract class Employee
     protected string Name;
     protected string EmployeeId;
 
-
+ public string EmployeeName => Name;
     public Employee(string Name, string EmployeeId)
     {
         this.Name=Name;
