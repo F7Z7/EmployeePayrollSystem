@@ -1,5 +1,5 @@
 ﻿using EmployeePayrollSystem.Models;
-
+using EmployeePayrollSystem.Utitlities;
 
 class Program
 {
@@ -34,8 +34,7 @@ class Program
                 Console.WriteLine("Enter ID:");
                 string id = Console.ReadLine();
 
-                Console.WriteLine("Enter Monthly Salary:");
-                double salary = Convert.ToDouble(Console.ReadLine());
+                double salary = InputValidator.GetDouble("Monthly Salary");
 
 
                 Employee emp = new FullTimeEmployee(name, id, salary);
@@ -49,12 +48,12 @@ class Program
                 Console.WriteLine("Enter ID:");
                 string id = Console.ReadLine();
 
-                Console.WriteLine("Enter Hours Worked:");
-                double HoursWorked = Convert.ToDouble(Console.ReadLine());
+               
+                double HoursWorked = InputValidator.GetDouble("Enter Hours Worked:");
 
 
-                Console.WriteLine("Enter Wage:");
-                double Wage = Convert.ToDouble(Console.ReadLine());
+               
+                double Wage = InputValidator.GetDouble("Enter Wage");
 
                 Employee emp = new PartTimeEmployee(name, id, HoursWorked, Wage);
 
