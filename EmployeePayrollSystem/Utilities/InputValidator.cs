@@ -16,7 +16,7 @@ public static class InputValidator
             }
             catch
             {
-                Console.WriteLine("Invalid Input")
+                Console.WriteLine("Invalid Input");
             }
         }
 
@@ -36,7 +36,7 @@ public static class InputValidator
             }
             catch
             {
-                Console.WriteLine("Invalid Input")
+                Console.WriteLine("Invalid Input");
             }
         }
 
