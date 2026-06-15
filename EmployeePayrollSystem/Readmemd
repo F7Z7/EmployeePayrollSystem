@@ -1,0 +1,192 @@
+Employee Payroll Processing System
+Requirements
+
+Create a console application for a company.
+
+1. OOP
+
+Create an abstract class:
+
+Employee
+
+Fields:
+
+Name
+EmployeeId
+
+Methods:
+
+DisplayInfo()
+CalculateSalary()   (abstract)
+
+Create two derived classes:
+
+FullTimeEmployee
+MonthlySalary
+
+Salary:
+
+Return MonthlySalary
+PartTimeEmployee
+HoursWorked
+HourlyRate
+
+Salary:
+
+HoursWorked × HourlyRate
+2. If Conditions
+
+When displaying salary:
+
+Salary >= 50000
+    High Earner
+
+Salary >= 20000
+    Medium Earner
+
+Else
+    Low Earner
+3. Exception Handling
+
+Ask the user:
+
+How many employees?
+
+Use:
+
+try-catch
+
+to handle invalid input.
+
+Example:
+
+abc
+
+should not crash the program.
+
+4. List<T>
+
+Store all employees in:
+
+List<Employee>
+
+This demonstrates polymorphism.
+
+5. Thread
+
+Create a thread that prints:
+
+Generating Payroll Report...
+
+every second for 5 seconds.
+
+While the main thread continues processing employees.
+
+6. Task
+
+For each employee create a Task:
+
+Processing salary for Farzan...
+Processing salary for Harry...
+
+Each task should take:
+
+Task.Delay(2000)
+
+Then print:
+
+Salary Processed
+7. Async / Await
+
+Create:
+
+GeneratePayslipAsync()
+
+which simulates:
+
+Generating PDF...
+(wait 3 sec)
+Payslip Generated
+
+using:
+
+await Task.Delay(...)
+8. LINQ
+
+After processing all employees:
+
+Find:
+
+All High Earners
+salary >= 50000
+
+using:
+
+Where(...)
+
+Calculate:
+
+Total Payroll
+
+using:
+
+Sum(...)
+
+Find:
+
+Highest Paid Employee
+
+using:
+
+OrderByDescending(...)
+
+or
+
+Max(...)
+Expected Flow
+Enter number of employees:
+3
+
+Enter Employee Type
+1. Full Time
+2. Part Time
+
+...
+
+Generating Payroll Report...
+
+Processing salary for Farzan...
+Processing salary for Harry...
+Processing salary for John...
+
+Salary Processed
+Salary Processed
+Salary Processed
+
+Generating PDF...
+Payslip Generated
+
+===== EMPLOYEE REPORT =====
+
+Farzan
+Salary: 50000
+High Earner
+
+Harry
+Salary: 8000
+Low Earner
+
+John
+Salary: 25000
+Medium Earner
+
+===== LINQ REPORT =====
+
+High Earners:
+Farzan
+
+Total Payroll:
+83000
+
+Highest Paid Employee:
+Farzan
