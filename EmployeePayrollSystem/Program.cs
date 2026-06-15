@@ -1,6 +1,7 @@
 ﻿using EmployeePayrollSystem.Models;
 using EmployeePayrollSystem.Services;
 using EmployeePayrollSystem.Utitlities;
+using System.Threading.Tasks;
 
 class Program
 {
@@ -16,7 +17,7 @@ class Program
         }
     }
 
-    public static void Main()
+    public static async Task Main()
     {
 
         List<Employee> emplist = new List<Employee>();
@@ -49,7 +50,7 @@ class Program
                 Console.WriteLine("Enter ID:");
                 string id = Console.ReadLine();
 
-               
+
                 double HoursWorked = InputValidator.GetDouble("Enter Hours Worked:");
 
 
@@ -71,8 +72,17 @@ class Program
                 break;
 
         }
+        Thread reportThread = new Thread(PayrollService.GeneratePayrollReport);
+        reportThread.Start();
 
+        List<Task> tasks = new();
 
+        foreach (Employee emp in emplist)
+        {
+            tasks.Add(
+                PayrollService.ProcessSalary(emp)
+            );
+        }
 
         // Employee emp1 = new FullTimeEmployee(
         //     "Farzan","T2F1",50000
