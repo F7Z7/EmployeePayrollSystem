@@ -52,7 +52,6 @@ class Program
                 double HoursWorked = InputValidator.GetDouble("Enter Hours Worked:");
 
 
-               
                 double Wage = InputValidator.GetDouble("Enter Wage");
 
                 Employee emp = new PartTimeEmployee(name, id, HoursWorked, Wage);
