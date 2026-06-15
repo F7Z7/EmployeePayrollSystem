@@ -1,4 +1,5 @@
 ﻿using EmployeePayrollSystem.Models;
+using EmployeePayrollSystem.Services;
 using EmployeePayrollSystem.Utitlities;
 
 class Program
@@ -10,8 +11,8 @@ class Program
         foreach (Employee employee in employees)
         {
             employee.DisplayInfo();
-            Console.WriteLine(
-     $"Salary: {employee.CalculateSalary()}");
+            Console.WriteLine($"Salary: {employee.CalculateSalary()}");
+            Console.WriteLine($"Earner : {ReportService.GetEarnerType(employee)}");
         }
     }
 
