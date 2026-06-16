@@ -72,8 +72,7 @@ class Program
                 break;
 
         }
-        Thread reportThread = new Thread(PayrollService.GeneratePayrollReport);
-        reportThread.Start();
+       
 
         List<Task> tasks = new();
 
@@ -83,6 +82,12 @@ class Program
                 PayrollService.ProcessSalary(emp)
             );
         }
+
+        await Task.WhenAll(tasks);
+        
+         Thread reportThread = new Thread(PayrollService.GeneratePayrollReport);
+        reportThread.Start();
+        reportThread.Join();
 
         // Employee emp1 = new FullTimeEmployee(
         //     "Farzan","T2F1",50000
