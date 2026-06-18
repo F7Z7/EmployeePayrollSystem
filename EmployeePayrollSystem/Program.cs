@@ -9,12 +9,17 @@ class Program
 
     public static void ListEmployees(List<Employee> employees)
     {
-        Console.WriteLine("Employee Report");
+        Console.WriteLine("\n==================================");
+Console.WriteLine("      EMPLOYEE PAYROLL REPORT");
+Console.WriteLine("==================================");
         foreach (Employee employee in employees)
         {
             employee.DisplayInfo();
-            Console.WriteLine($"Salary: {employee.CalculateSalary()}");
-            Console.WriteLine($"Earner : {ReportService.GetEarnerType(employee)}");
+            Console.WriteLine("----------------------------------");
+Console.WriteLine($"Name   : {employee.EmployeeName}");
+Console.WriteLine($"Salary : ₹{employee.CalculateSalary():N2}");
+Console.WriteLine($"Type   : {ReportService.GetEarnerType(employee)}");
+Console.WriteLine("----------------------------------");
         }
     }
     public static void FinalReport(List<Employee> employees)
@@ -23,8 +28,11 @@ class Program
             .Where(emp => emp.CalculateSalary() >= 50000)
             .Select(emp => emp.EmployeeName);
 
-        Console.WriteLine("\n LINQ REPORT ");
-        Console.WriteLine("High Earners:");
+        Console.WriteLine("\n==================================");
+Console.WriteLine("          LINQ REPORT");
+Console.WriteLine("==================================");
+
+Console.WriteLine("\nHigh Earners:");
 
         foreach(string name in highEarners)
         {
