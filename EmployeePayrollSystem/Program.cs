@@ -30,6 +30,14 @@ class Program
         {
             Console.WriteLine(name);
         }
+
+        double totalPayroll=employees.Sum(emp=>emp.CalculateSalary());
+       Console.WriteLine($"Total Payroll: {totalPayroll}");
+
+       var highestEarner=employees.OrderByDescending(emp=>emp.CalculateSalary()).First();
+
+       Console.WriteLine($"Highest Paid Employee {highestEarner.EmployeeName}");
+
     }
 
     public static async Task Main()
