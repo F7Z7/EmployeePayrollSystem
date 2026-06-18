@@ -1,7 +1,7 @@
 ﻿using EmployeePayrollSystem.Models;
 using EmployeePayrollSystem.Services;
 using EmployeePayrollSystem.Utitlities;
-using System.Threading.Tasks;
+using System.Linq;
 
 class Program
 {
@@ -9,11 +9,26 @@ class Program
 
     public static void ListEmployees(List<Employee> employees)
     {
+        Console.WriteLine("Employee Report");
         foreach (Employee employee in employees)
         {
             employee.DisplayInfo();
             Console.WriteLine($"Salary: {employee.CalculateSalary()}");
             Console.WriteLine($"Earner : {ReportService.GetEarnerType(employee)}");
+        }
+    }
+    public static void FinalReport(List<Employee> employees)
+    {
+        var highEarners = employees
+            .Where(emp => emp.CalculateSalary() >= 50000)
+            .Select(emp => emp.EmployeeName);
+
+        Console.WriteLine("\n LINQ REPORT ");
+        Console.WriteLine("High Earners:");
+
+        foreach(string name in highEarners)
+        {
+            Console.WriteLine(name);
         }
     }
 
@@ -108,8 +123,9 @@ class Program
 
 
         ListEmployees(emplist);
+        FinalReport(emplist);
 
+    
     }
-
 
 }
