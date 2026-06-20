@@ -89,6 +89,8 @@ EmployeePayrollSystem/
 ├─ Program.cs
 └─ Readme.MD
 ```
+
+## Sample Output
 ```
 =========================================
       EMPLOYEE PAYROLL SYSTEM
